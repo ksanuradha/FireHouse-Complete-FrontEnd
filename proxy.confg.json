@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "http://demo.dreamsquadgroup.com/test/index.json",
+    "secure": false
+  }
+}

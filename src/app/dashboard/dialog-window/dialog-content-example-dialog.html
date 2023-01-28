@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>Update Bookmark</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="form" (ngSubmit)="update()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input type="text" class="form-control" id="Name" aria-describedby="emailHelp" placeholder="Enter Name" formControlName="name">
+    </div><br>
+    <div class="form-group">
+      <label for="exampleInputEmail1">URL</label>
+      <input type="text" class="form-control" id="url" aria-describedby="emailHelp" placeholder="Enter URL" formControlName="url">
+    </div><br>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Description</label>
+      <input type="text" class="form-control" id="description" aria-describedby="emailHelp" placeholder="Enter description" formControlName="description">
+    </div><br>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Status</label>
+      <input type="text" class="form-control" id="status" aria-describedby="emailHelp" placeholder="Enter status" formControlName="status">
+    </div><br>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Expiry Date</label>
+      <input  type="date" [(ngModel)]="expireyDate" class="form-control" id="expirydate" aria-describedby="emailHelp" placeholder="Enter email" formControlName="expirydate">
+    </div>
+    <br><br>
+    <button type="submit" mat-dialog-close class="btn btn-primary">Update</button>&nbsp;&nbsp;
+    <button type="button"  mat-dialog-close class="btn btn-danger">cancel</button>
+  </form>
+</mat-dialog-content>
+

@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="vertical-center">
+    <button type="button" (click)="getData()" class="btn btn-primary btn-lg btn-block">Get All Book Marks</button>
+  </div>
+</div>
+<div *ngIf="bookmarksArray.length > 0">
+  <br><br>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">URL</th>
+          <th scope="col">Description</th>
+          <th scope="col">Status</th>
+          <th scope="col">Expiry Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bookmark of bookmarksArray">
+          <td> {{ bookmark.name }}</td>
+          <td> {{ bookmark.url }} </td>
+          <td> {{ bookmark.description }} </td>
+          <td> {{ bookmark.status  }}</td>
+          <td *ngIf="bookmark.expiryDate != null"> {{ bookmark.expiryDate+"" | date:'YYYY-MM-dd HH:mm:ss' }} </td>
+          <td *ngIf="bookmark.expiryDate == null"> - </td>
+          <td> <button (click)="deleteBookMark(bookmark.id)" type="button" class="btn btn-danger">Delete</button></td>
+          <td><button type="button" (click)="updateBookMark(bookmark)" class="btn btn-success">Update</button></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+
